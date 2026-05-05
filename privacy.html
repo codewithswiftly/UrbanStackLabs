@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – UrbanStack Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-deep:       #04091a;
+      --bg-card:       rgba(255,255,255,0.04);
+      --accent:        #5af0d2;
+      --accent-dim:    rgba(90,240,210,0.10);
+      --accent-glow:   rgba(90,240,210,0.20);
+      --purple:        #9b6dff;
+      --purple-dim:    rgba(155,109,255,0.10);
+      --text-primary:  #eef2ff;
+      --text-secondary:#8892b0;
+      --text-muted:    #4a5568;
+      --border:        rgba(255,255,255,0.07);
+      --r:             14px;
+      --transition:    0.35s cubic-bezier(0.23,1,0.32,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 300;
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* Noise */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      background-size: 128px;
+      pointer-events: none; z-index: 0;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg-deep); }
+    ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 99px; }
+
+    /* Mesh */
+    .bg-mesh {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 70% 50% at 10% 5%,  rgba(14,32,90,0.5)  0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 90% 8%,  rgba(80,30,140,0.4) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 85% 92%, rgba(50,10,110,0.35) 0%, transparent 65%),
+        linear-gradient(160deg, #06101f 0%, #100820 50%, #07051a 100%);
+    }
+
+    /* Vertical accent line */
+    .page-line {
+      position: fixed;
+      top: 0; bottom: 0;
+      left: 72px;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(90,240,210,0.12) 20%, rgba(90,240,210,0.12) 80%, transparent);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 0;
+      background: rgba(4,9,26,0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 960px; margin: 0 auto; padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 600; font-size: 1.05rem;
+      letter-spacing: -0.01em;
+      display: flex; align-items: center; gap: 9px;
+      text-decoration: none; color: var(--text-primary);
+    }
+    .nav-logo .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 8px var(--accent);
+    }
+    .nav-back {
+      font-size: 0.8rem; font-weight: 400;
+      color: var(--text-secondary);
+      text-decoration: none;
+      display: flex; align-items: center; gap: 6px;
+      transition: color var(--transition);
+    }
+    .nav-back:hover { color: var(--accent); }
+
+    /* HERO HEADER */
+    .hero {
+      position: relative; z-index: 1;
+      padding: 160px 0 80px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero-glow {
+      position: absolute;
+      width: 600px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(90,240,210,0.06) 0%, transparent 70%);
+      top: 60%; left: 50%; transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .hero-glow-purple {
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(155,109,255,0.07) 0%, transparent 70%);
+      top: 40%; left: 30%; transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(90,240,210,0.18);
+      border-radius: 99px;
+      padding: 5px 14px 5px 10px;
+      margin-bottom: 28px;
+    }
+    .hero-tag .pip {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+      animation: blink 2.5s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
+    .hero-tag span {
+      font-size: 0.68rem; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent);
+    }
+    .hero h1 {
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 600;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      letter-spacing: -0.025em;
+      line-height: 1.08;
+      background: linear-gradient(135deg, #eef2ff 0%, #c4b5fd 55%, var(--accent) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 18px;
+    }
+    .hero p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+    }
+    .hero .divider-line {
+      width: 48px; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--purple));
+      border-radius: 99px;
+      margin: 28px auto 0;
+    }
+
+    /* MAIN LAYOUT */
+    .layout {
+      position: relative; z-index: 1;
+      max-width: 960px; margin: 0 auto;
+      padding: 0 32px 100px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* SIDEBAR TOC */
+    .toc {
+      position: sticky;
+      top: 100px;
+    }
+    .toc-label {
+      font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      padding-left: 14px;
+      border-left: 2px solid var(--border);
+    }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .toc-list a {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.8rem; font-weight: 400;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 7px 12px;
+      border-radius: 8px;
+      transition: all var(--transition);
+      border: 1px solid transparent;
+    }
+    .toc-list a:hover {
+      color: var(--text-secondary);
+      background: var(--bg-card);
+      border-color: var(--border);
+    }
+    .toc-list a.active {
+      color: var(--accent);
+      background: var(--accent-dim);
+      border-color: rgba(90,240,210,0.15);
+    }
+    .toc-list a .num {
+      font-size: 0.65rem; font-weight: 600;
+      color: var(--text-muted);
+      min-width: 16px;
+    }
+    .toc-list a.active .num { color: var(--accent); }
+
+    /* CONTENT */
+    .content { display: flex; flex-direction: column; gap: 28px; }
+
+    /* Section card */
+    .policy-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 32px 36px;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: reveal 0.6s cubic-bezier(0.23,1,0.32,1) forwards;
+    }
+    .policy-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(90,240,210,0.15), transparent);
+    }
+    .policy-card:hover {
+      border-color: rgba(255,255,255,0.11);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.3);
+    }
+
+    @keyframes reveal {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .policy-card:nth-child(1)  { animation-delay: 0.05s; }
+    .policy-card:nth-child(2)  { animation-delay: 0.10s; }
+    .policy-card:nth-child(3)  { animation-delay: 0.15s; }
+    .policy-card:nth-child(4)  { animation-delay: 0.20s; }
+    .policy-card:nth-child(5)  { animation-delay: 0.25s; }
+    .policy-card:nth-child(6)  { animation-delay: 0.30s; }
+    .policy-card:nth-child(7)  { animation-delay: 0.35s; }
+    .policy-card:nth-child(8)  { animation-delay: 0.40s; }
+
+    .card-header {
+      display: flex; align-items: flex-start; gap: 18px;
+      margin-bottom: 18px;
+    }
+    .card-icon {
+      width: 46px; height: 46px; flex-shrink: 0;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .card-meta { display: flex; flex-direction: column; gap: 3px; }
+    .card-num {
+      font-size: 0.63rem; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 600; font-size: 1.1rem;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+    }
+    .card-body {
+      color: var(--text-secondary);
+      font-size: 0.93rem;
+      line-height: 1.85;
+      font-weight: 300;
+    }
+    .card-body strong { color: var(--text-primary); font-weight: 500; }
+
+    /* Icon color variants */
+    .ic-teal   { background: var(--accent-dim); border: 1px solid rgba(90,240,210,0.18); }
+    .ic-purple { background: var(--purple-dim); border: 1px solid rgba(155,109,255,0.2); }
+    .ic-blue   { background: rgba(90,140,255,0.08); border: 1px solid rgba(90,140,255,0.18); }
+    .ic-amber  { background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.18); }
+    .ic-rose   { background: rgba(251,113,133,0.08); border: 1px solid rgba(251,113,133,0.18); }
+    .ic-green  { background: rgba(34,197,94,0.08);  border: 1px solid rgba(34,197,94,0.18); }
+
+    /* Contact card special */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(90,240,210,0.05), rgba(155,109,255,0.05));
+      border-color: rgba(90,240,210,0.12);
+    }
+    .contact-card .card-body a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity var(--transition);
+    }
+    .contact-card .card-body a:hover { opacity: 0.75; }
+
+    /* Updated badge */
+    .update-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 6px 14px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 24px;
+    }
+    .update-badge .dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--text-muted);
+    }
+
+    /* FOOTER */
+    footer {
+      position: relative; z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+    }
+    .footer-inner {
+      max-width: 960px; margin: 0 auto; padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 14px;
+    }
+    .footer-logo {
+      font-family: 'Urbanist', sans-serif; font-weight: 600;
+      font-size: 0.95rem; color: var(--text-secondary);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .footer-copy { font-size: 0.78rem; color: var(--text-muted); }
+    .footer-links { display: flex; gap: 22px; }
+    .footer-links a {
+      font-size: 0.78rem; color: var(--text-muted);
+      text-decoration: none; transition: color var(--transition);
+    }
+    .footer-links a:hover { color: var(--text-secondary); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .layout { grid-template-columns: 1fr; gap: 32px; }
+      .toc { position: static; }
+      .page-line { display: none; }
+      .policy-card { padding: 24px 20px; }
+      .card-header { gap: 14px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="page-line" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="dot"></span>
+      UrbanStack Labs
+    </a>
+    <a href="index.html" class="nav-back">← Back to site</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-glow-purple" aria-hidden="true"></div>
+  <div class="hero-tag">
+    <span class="pip"></span>
+    <span>Legal Document</span>
+  </div>
+  <h1>Privacy Policy</h1>
+  <p>Last updated · <strong style="color:var(--text-primary);font-weight:500;">2026</strong> &nbsp;·&nbsp; Budget Craft by UrbanStack Labs</p>
+  <div class="divider-line"></div>
+</header>
+
+<!-- LAYOUT -->
+<main class="layout">
+
+  <!-- TOC Sidebar -->
+  <aside class="toc" aria-label="Table of contents">
+    <div class="toc-label">Contents</div>
+    <ul class="toc-list" id="toc">
+      <li><a href="#s1" class="active"><span class="num">01</span> Information We Collect</a></li>
+      <li><a href="#s2"><span class="num">02</span> Camera Permission</a></li>
+      <li><a href="#s3"><span class="num">03</span> Data Storage</a></li>
+      <li><a href="#s4"><span class="num">04</span> Third-Party Services</a></li>
+      <li><a href="#s5"><span class="num">05</span> Security</a></li>
+      <li><a href="#s6"><span class="num">06</span> User Control</a></li>
+      <li><a href="#s7"><span class="num">07</span> Policy Changes</a></li>
+      <li><a href="#s8"><span class="num">08</span> Contact</a></li>
+    </ul>
+    <div class="update-badge">
+      <span class="dot"></span>
+      Current & up to date
+    </div>
+  </aside>
+
+  <!-- Policy Sections -->
+  <div class="content">
+
+    <div class="policy-card" id="s1">
+      <div class="card-header">
+        <div class="card-icon ic-teal">📋</div>
+        <div class="card-meta">
+          <span class="card-num">Section 01</span>
+          <h2 class="card-title">Information We Collect</h2>
+        </div>
+      </div>
+      <p class="card-body">
+        We do not collect personal data without your consent. The app may store financial data locally on your device — such as <strong>expenses, income, and categories</strong> — solely to power the app's features and improve your experience.
+      </p>
+    </div>
+
+    <div class="policy-card" id="s2">
+      <div class="card-header">
+        <div class="card-icon ic-purple">📷</div>
+        <div class="card-meta">
+          <span class="card-num">Section 02</span>
+          <h2 class="card-title">Camera Permission</h2>
+        </div>
+      </div>
+      <p class="card-body">
+        The app requests access to your device camera solely to <strong>scan receipts and bills</strong> for expense tracking. All image processing is performed entirely on-device and images are <strong>never shared with any third parties</strong>.
+      </p>
+    </div>
+
+    <div class="policy-card" id="s3">
+      <div class="card-header">
+        <div class="card-icon ic-blue">🗄️</div>
+        <div class="card-meta">
+          <span class="card-num">Section 03</span>
+          <h2 class="card-title">Data Storage</h2>
+        </div>
+      </div>
+      <p class="card-body">
+        All your data is stored <strong>securely on your device</strong>. If you choose to enable backup features, your data may be stored in your personal <strong>Google Drive account</strong> under your own Google credentials — we do not have access to it.
+      </p>
+    </div>
+
+    <div class="policy-card" id="s4">
+      <div class="card-header">
+        <div class="card-icon ic-amber">🔗</div>
+        <div class="card-meta">
+          <span class="card-num">Section 04</span>
+          <h2 class="card-title">Third-Party Services</h2>
+        </div>
+      </div>
+      <p class="card-body">
+        We may use trusted services such as <strong>Google Firebase</strong> for analytics and app performance improvements. These services are carefully selected and do <strong>not collect personally identifiable financial data</strong> from your device.
+      </p>
+    </div>
+
+    <div class="policy-card" id="s5">
+      <div class="card-header">
+        <div class="card-icon ic-green">🔒</div>
+        <div class="card-meta">
+          <span class="card-num">Section 05</span>
+          <h2 class="card-title">Security</h2>
+        </div>
+      </div>
+      <p class="card-body">
+        We implement robust security measures including <strong>encryption</strong> and <strong>local authentication</strong> to protect your data. Your financial information is treated with the highest level of care and is never transmitted without your knowledge.
+      </p>
+    </div>
+
+    <div class="policy-card" id="s6">
+      <div class="card-header">
+        <div class="card-icon ic-teal">🎛️</div>
+        <div class="card-meta">
+          <span class="card-num">Section 06</span>
+          <h2 class="card-title">User Control</h2>
+        </div>
+      </div>
+      <p class="card-body">
+        You have <strong>full control</strong> over your data at all times. You can delete all your data at any time directly from within the app. We believe your data belongs to you — no strings attached.
+      </p>
+    </div>
+
+    <div class="policy-card" id="s7">
+      <div class="card-header">
+        <div class="card-icon ic-purple">🔄</div>
+        <div class="card-meta">
+          <span class="card-num">Section 07</span>
+          <h2 class="card-title">Changes to This Policy</h2>
+        </div>
+      </div>
+      <p class="card-body">
+        We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. Any updates will be <strong>reflected on this page</strong> with a revised date. We encourage you to review this policy periodically.
+      </p>
+    </div>
+
+    <div class="policy-card contact-card" id="s8">
+      <div class="card-header">
+        <div class="card-icon ic-teal">✉️</div>
+        <div class="card-meta">
+          <span class="card-num">Section 08</span>
+          <h2 class="card-title">Contact Us</h2>
+        </div>
+      </div>
+      <p class="card-body">
+        If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your data, please reach out to us anytime at:<br><br>
+        <a href="mailto:info@urbanstacklabs.com">info@urbanstacklabs.com</a>
+      </p>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);display:inline-block;"></span>
+      UrbanStack Labs
+    </div>
+    <span class="footer-copy">© 2026 UrbanStack Labs. All rights reserved.</span>
+    <nav class="footer-links" aria-label="Footer links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  /* Active TOC highlight on scroll */
+  const sections = document.querySelectorAll('.policy-card[id]');
+  const tocLinks = document.querySelectorAll('.toc-list a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.toc-list a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4, rootMargin: '-80px 0px -60% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  /* Smooth TOC click */
+  tocLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body>
+</html>
