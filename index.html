@@ -99,17 +99,7 @@
   nav{display:flex;align-items:center;justify-content:space-between;}
   .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:-0.01em;}
   .logo-mark{
-    width:30px;height:30px;border-radius:9px;
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    position:relative;flex-shrink:0;
-  }
-  .logo-mark::after{
-    content:'';position:absolute;inset:7px;border-radius:4px;
-    background:var(--bg);
-    -webkit-mask:radial-gradient(circle at 30% 30%, transparent 0%, black 0%);
-  }
-  .logo-mark::before{
-    content:'';position:absolute;inset:9px;border:1.5px solid rgba(255,255,255,0.9);border-radius:50%;
+    width:30px;height:30px;flex-shrink:0;object-fit:contain;display:block;
   }
   .navlinks{display:flex;align-items:center;gap:36px;}
   .navlinks a{font-size:14.5px;font-weight:500;color:var(--text-soft);transition:color 0.2s;}
@@ -394,7 +384,7 @@
 <header id="header">
   <div class="wrap">
     <nav>
-      <a href="#" class="logo"><span class="logo-mark"></span>UrbanStack Labs</a>
+      <a href="#" class="logo"><img src="assets/logo.png" alt="UrbanStack Labs logo" class="logo-mark">UrbanStack Labs</a>
       <div class="navlinks">
         <a href="#products">Products</a>
         <a href="#screenshots">Screenshots</a>
@@ -597,31 +587,31 @@
       <div class="shot-scroller reveal">
         <div class="shot-track">
           <figure class="shot-card">
-            <img src="assets/budgetcraft-screenshots/01_money_overview.png" alt="BudgetCraft smart money overview dashboard showing total balance, income, expense, and spending by category" loading="lazy">
+            <img src="assets/01_money_overview.png" alt="BudgetCraft smart money overview dashboard showing total balance, income, expense, and spending by category" loading="lazy">
             <figcaption>Smart money overview</figcaption>
           </figure>
           <figure class="shot-card">
-            <img src="assets/budgetcraft-screenshots/02_calendar_planner.png" alt="BudgetCraft calendar and daily planner showing cash flow by day" loading="lazy">
+            <img src="assets/02_calendar_planner.png" alt="BudgetCraft calendar and daily planner showing cash flow by day" loading="lazy">
             <figcaption>Calendar + daily planner</figcaption>
           </figure>
           <figure class="shot-card">
-            <img src="assets/budgetcraft-screenshots/03_budget_control.png" alt="BudgetCraft budget control screen showing category limits and progress" loading="lazy">
+            <img src="assets/03_budget_control.png" alt="BudgetCraft budget control screen showing category limits and progress" loading="lazy">
             <figcaption>Budgets that stay actionable</figcaption>
           </figure>
           <figure class="shot-card">
-            <img src="assets/budgetcraft-screenshots/05_group_ledgers.png" alt="BudgetCraft shared group ledgers for splitting trips and bills" loading="lazy">
+            <img src="assets/05_group_ledgers.png" alt="BudgetCraft shared group ledgers for splitting trips and bills" loading="lazy">
             <figcaption>Local-first group ledgers</figcaption>
           </figure>
           <figure class="shot-card">
-            <img src="assets/budgetcraft-screenshots/07_profile_and_currency.png" alt="BudgetCraft profile screen with theme and currency personalization" loading="lazy">
+            <img src="assets/07_profile_and_currency.png" alt="BudgetCraft profile screen with theme and currency personalization" loading="lazy">
             <figcaption>Profile + global currency</figcaption>
           </figure>
           <figure class="shot-card">
-            <img src="assets/budgetcraft-screenshots/09_reports_and_insights.png" alt="BudgetCraft reports screen with income vs expense chart and category breakdown" loading="lazy">
+            <img src="assets/09_reports_and_insights.png" alt="BudgetCraft reports screen with income vs expense chart and category breakdown" loading="lazy">
             <figcaption>Reports that explain more</figcaption>
           </figure>
           <figure class="shot-card">
-            <img src="assets/budgetcraft-screenshots/10_financial_news.png" alt="BudgetCraft financial news feed alongside backup settings" loading="lazy">
+            <img src="assets/10_financial_news.png" alt="BudgetCraft financial news feed alongside backup settings" loading="lazy">
             <figcaption>Backup + financial news</figcaption>
           </figure>
         </div>
@@ -820,19 +810,19 @@
       </div>
       <div class="grid-3">
         <div class="testi-card reveal">
-          <div class="stars">★★★★</div>
+          <div class="stars">★★★★★</div>
           <p>"Finally an app that tells me it doesn't want my data instead of quietly taking it. BudgetCraft feels different from the first screen."</p>
-          <div class="testi-person"><div class="testi-avatar">AG</div><div><div class="testi-name">Aman Gupta</div><div class="testi-role">Early Access User</div></div></div>
+          <div class="testi-person"><div class="testi-avatar">A</div><div><div class="testi-name">Placeholder Name</div><div class="testi-role">Early Access User</div></div></div>
         </div>
         <div class="testi-card reveal reveal-d1">
           <div class="stars">★★★★★</div>
           <p>"The Google Drive backup idea is genuinely clever — I get the convenience of cloud backup without handing my finances to a stranger's server."</p>
-          <div class="testi-person"><div class="testi-avatar">DR</div><div><div class="testi-name">Deboshri Roy</div><div class="testi-role">Beta Tester</div></div></div>
+          <div class="testi-person"><div class="testi-avatar">B</div><div><div class="testi-name">Placeholder Name</div><div class="testi-role">Beta Tester</div></div></div>
         </div>
         <div class="testi-card reveal reveal-d2">
-          <div class="stars">★★★★</div>
+          <div class="stars">★★★★★</div>
           <p>"Design-wise this doesn't feel like a typical finance app at all. It feels considered, calm, and fast."</p>
-          <div class="testi-person"><div class="testi-avatar">NS</div><div><div class="testi-name">Nitesh Shaw</div><div class="testi-role">Early Access User</div></div></div>
+          <div class="testi-person"><div class="testi-avatar">C</div><div><div class="testi-name">Placeholder Name</div><div class="testi-role">Early Access User</div></div></div>
         </div>
       </div>
     </div>
@@ -846,10 +836,11 @@
         <h2>Let's talk about privacy-first software</h2>
         <p class="section-sub">Questions, partnerships, or just want to know more about BudgetCraft? We'd love to hear from you.</p>
         <div class="contact-ctas">
-          <a href="mailto:info@urbanstacklabs.com" class="btn btn-primary">info@urbanstacklabs.com</a>
+          <a href="mailto:hello@urbanstacklabs.com" class="btn btn-primary">hello@urbanstacklabs.com</a>
         </div>
         <div class="social-row">
           <a href="#" class="social-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zM8.5 8h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.66 1.8-2.66 3.65V23h-4V8z"/></svg></a>
+          <a href="#" class="social-icon" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 11 .6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.3 11.3 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.6 7.9-5.9 7.9-11C23.5 5.7 18.3.5 12 .5z"/></svg></a>
           <a href="#" class="social-icon" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.2l-5.6-7.3L4.1 22H1l8.1-9.3L.8 2h7.4l5 6.6L18.9 2zm-1.3 18h2L6.5 4H4.4l13.2 16z"/></svg></a>
         </div>
       </div>
@@ -861,7 +852,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#" class="logo"><span class="logo-mark"></span>UrbanStack Labs</a>
+        <a href="#" class="logo"><img src="assets/logo.png" alt="UrbanStack Labs logo" class="logo-mark">UrbanStack Labs</a>
         <p>Building AI Software That Respects Your Privacy.</p>
       </div>
       <div class="footer-links">
@@ -879,6 +870,7 @@
         <div class="footer-col">
           <h4>Connect</h4>
           <a href="#">LinkedIn</a>
+          <a href="#">GitHub</a>
           <a href="#">X (Twitter)</a>
         </div>
       </div>
