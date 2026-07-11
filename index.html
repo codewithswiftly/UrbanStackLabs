@@ -253,6 +253,23 @@
   .feature-item.soon{color:var(--text-faint);}
   .feature-item.soon svg{color:var(--text-faint);}
 
+  /* ---------- screenshots gallery ---------- */
+  .shot-scroller{
+    overflow-x:auto;padding-bottom:20px;margin:0 -32px;padding-left:32px;padding-right:32px;
+    scrollbar-width:thin;scroll-snap-type:x proximity;
+  }
+  .shot-scroller::-webkit-scrollbar{height:6px;}
+  .shot-scroller::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px;}
+  .shot-track{display:flex;gap:22px;width:max-content;}
+  .shot-card{
+    width:220px;flex-shrink:0;scroll-snap-align:start;
+    border-radius:20px;overflow:hidden;border:1px solid var(--border);background:var(--bg);
+    box-shadow:var(--shadow-sm);transition:transform 0.3s cubic-bezier(.16,.84,.44,1), box-shadow 0.3s ease;
+  }
+  .shot-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);}
+  .shot-card img{width:100%;height:auto;display:block;background:var(--bg-alt);}
+  .shot-card figcaption{padding:14px 16px;font-size:13px;font-weight:600;color:var(--text-soft);text-align:center;}
+
   /* ---------- privacy section ---------- */
   .privacy-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:70px;}
   .shield-wrap svg{width:100%;height:auto;}
@@ -377,9 +394,10 @@
 <header id="header">
   <div class="wrap">
     <nav>
-      <a href="assets/developeraccount.png" class="logo"><span class="logo-mark"></span>UrbanStack Labs</a>
+      <a href="#" class="logo"><span class="logo-mark"></span>UrbanStack Labs</a>
       <div class="navlinks">
         <a href="#products">Products</a>
+        <a href="#screenshots">Screenshots</a>
         <a href="#privacy">Privacy</a>
         <a href="#vision">Vision</a>
         <a href="#why">Why Us</a>
@@ -563,6 +581,49 @@
             <div class="feature-item soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Investment tracking (soon)</div>
           </div>
           <a href="#privacy" class="btn btn-primary" style="width:fit-content;">See how your data stays yours</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOTS -->
+  <section id="screenshots" class="alt-bg">
+    <div class="wrap">
+      <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+        <div class="kicker">See It In Action</div>
+        <h2>BudgetCraft, screen by screen</h2>
+        <p class="section-sub">A closer look at how BudgetCraft handles your money, your way — from daily planning to group expenses.</p>
+      </div>
+      <div class="shot-scroller reveal">
+        <div class="shot-track">
+          <figure class="shot-card">
+            <img src="assets/01_money_overview.png" alt="BudgetCraft smart money overview dashboard showing total balance, income, expense, and spending by category" loading="lazy">
+            <figcaption>Smart money overview</figcaption>
+          </figure>
+          <figure class="shot-card">
+            <img src="assets/02_calendar_planner.png" alt="BudgetCraft calendar and daily planner showing cash flow by day" loading="lazy">
+            <figcaption>Calendar + daily planner</figcaption>
+          </figure>
+          <figure class="shot-card">
+            <img src="assets/03_budget_control.png" alt="BudgetCraft budget control screen showing category limits and progress" loading="lazy">
+            <figcaption>Budgets that stay actionable</figcaption>
+          </figure>
+          <figure class="shot-card">
+            <img src="assets/05_group_ledgers.png" alt="BudgetCraft shared group ledgers for splitting trips and bills" loading="lazy">
+            <figcaption>Local-first group ledgers</figcaption>
+          </figure>
+          <figure class="shot-card">
+            <img src="assets/07_profile_and_currency.png" alt="BudgetCraft profile screen with theme and currency personalization" loading="lazy">
+            <figcaption>Profile + global currency</figcaption>
+          </figure>
+          <figure class="shot-card">
+            <img src="assets/09_reports_and_insights.png" alt="BudgetCraft reports screen with income vs expense chart and category breakdown" loading="lazy">
+            <figcaption>Reports that explain more</figcaption>
+          </figure>
+          <figure class="shot-card">
+            <img src="assets/10_financial_news.png" alt="BudgetCraft financial news feed alongside backup settings" loading="lazy">
+            <figcaption>Backup + financial news</figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -801,7 +862,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/assets/developeraccount.png" class="logo"><span class="logo-mark"></span>UrbanStack Labs</a>
+        <a href="#" class="logo"><span class="logo-mark"></span>UrbanStack Labs</a>
         <p>Building AI Software That Respects Your Privacy.</p>
       </div>
       <div class="footer-links">
